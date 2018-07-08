@@ -1,4 +1,4 @@
-package com.demo.works;
+package com.demo.works.diff;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;

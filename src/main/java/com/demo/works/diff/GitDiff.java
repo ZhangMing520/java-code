@@ -1,4 +1,4 @@
-package com.demo.works;
+package com.demo.works.diff;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -7,6 +7,19 @@
     <groupId>com.demo</groupId>
     <artifactId>forjava</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>2.0.11</version>
+        </dependency>
+
+
+    </dependencies>
+
+
     <build>
         <plugins>
             <plugin>

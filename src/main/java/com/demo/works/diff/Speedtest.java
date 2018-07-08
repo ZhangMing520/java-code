@@ -1,4 +1,4 @@
-package com.demo.works;
+package com.demo.works.diff;
 
 // Copyright 2010 Google Inc. All Rights Reserved.
 
@@ -21,14 +21,15 @@ import java.util.LinkedList;
 public class Speedtest {
 
     public static void main(String args[]) throws IOException {
-        String text1 = readFile("/home/zhangming/develop/workspace/idea/forjava/src/main/java/com/demo/works/Speedtest1.txt");
-        String text2 = readFile("/home/zhangming/develop/workspace/idea/forjava/src/main/java/com/demo/works/Speedtest2.txt");
+        String text1 = readFile("E:\\workspaces\\ideaSpaces\\IDEAProjects\\forjava\\src\\main\\java\\com\\demo\\works\\diff\\Speedtest1.txt");
+        String text2 = readFile("E:\\workspaces\\ideaSpaces\\IDEAProjects\\forjava\\src\\main\\java\\com\\demo\\works" +
+                "\\diff\\Speedtest2.txt");
 
         diff_match_patch dmp = new diff_match_patch();
         dmp.Diff_Timeout = 0;
 
         // Execute one reverse diff as a warmup.
-        LinkedList<diff_match_patch.Diff> diffs = dmp.diff_main(text1, text2, false);
+        LinkedList<diff_match_patch.Diff> diffs = dmp.diff_main(text1, text2, true);
 
         System.out.println(diffs);
     }
