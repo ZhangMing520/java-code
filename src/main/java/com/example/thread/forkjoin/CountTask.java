@@ -1,4 +1,4 @@
-package com.demo.forkjoin;
+package com.example.thread.forkjoin;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 /**
  * @Author: zhangming
  * @Date:Create in 7/7/18 12:27 AM
- * @Description:
+ * @Description: java7  forkjoin 比普通的线程池更高效（任务窃取）
  */
 public class CountTask extends RecursiveTask<Integer> {
 

@@ -1,4 +1,4 @@
-package com.demo.works.diff;
+package com.example.works.diff;
 
 // Copyright 2010 Google Inc. All Rights Reserved.
 

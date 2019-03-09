@@ -1,4 +1,4 @@
-package com.demo.works.diff;
+package com.example.works.diff;
 
 /*
  * Diff Match and Patch -- Test harness
@@ -33,9 +33,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import com.demo.works.diff.diff_match_patch.Diff;
-import com.demo.works.diff.diff_match_patch.LinesToCharsResult;
-import com.demo.works.diff.diff_match_patch.Patch;
+import com.example.works.diff.diff_match_patch.Diff;
+import com.example.works.diff.diff_match_patch.LinesToCharsResult;
+import com.example.works.diff.diff_match_patch.Patch;
 
 public class diff_match_patch_test {
 

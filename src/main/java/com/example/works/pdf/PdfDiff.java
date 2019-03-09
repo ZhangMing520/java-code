@@ -1,10 +1,8 @@
-package com.demo.works.pdf;
+package com.example.works.pdf;
 
-import com.demo.works.diff.diff_match_patch;
-import org.apache.pdfbox.pdmodel.PDDocument;
+import com.example.works.diff.diff_match_patch;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
