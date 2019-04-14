@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.LongAdder;
  */
 public class AtomicValue {
 
-    static final Logger logger = LoggerFactory.getLogger(AtomicValue.class);
+    private static final Logger logger = LoggerFactory.getLogger(AtomicValue.class);
 
     public static void main(String[] args) {
         final AtomicLong nextNumber = new AtomicLong();

@@ -33,9 +33,12 @@ import java.nio.file.Files;
  * Files.createTempDirectory()  在用户指定或者系统创建临时目录/文件
  * <p>
  * Files.lines()  返回时流，读取大文件时候有用，并且还有流的操作，很实用
+ * <p>
+ * java7 中新增特性 直接操作文件和文件夹
  */
 public class UseFiles {
 
     public static void main(String[] args) {
+
     }
 }

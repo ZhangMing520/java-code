@@ -8,6 +8,8 @@ import java.net.URLClassLoader;
 /**
  * @author zhangming
  * @date 2018/12/22 16:58
+ * <p>
+ * 手动加载jar包
  */
 public class UseURLClassLoader {
 
@@ -17,7 +19,7 @@ public class UseURLClassLoader {
                 new URL("file:hamcrest-core-1.3.jar")
         };
 
-        try(URLClassLoader loader = new URLClassLoader(urls)){
+        try (URLClassLoader loader = new URLClassLoader(urls)) {
             Class<?> klass = loader.loadClass("org.junit.runner.JunitCore");
         }
     }

@@ -1,4 +1,4 @@
-package com.example.thread.forkjoin;
+package com.example.thread;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
@@ -9,16 +9,16 @@ import java.util.stream.IntStream;
 /**
  * @Author: zhangming
  * @Date:Create in 7/7/18 12:27 AM
- * @Description: java7  forkjoin 比普通的线程池更高效（任务窃取）
+ * @Description: java7  forkjoin 比普通的线程池更高效（任务窃取） 双端队列
  */
-public class CountTask extends RecursiveTask<Integer> {
+public class ForkJoinCountTask extends RecursiveTask<Integer> {
 
     private static final int THRESHOLD = 2; //阈值
 
     private int start;
     private int end;
 
-    public CountTask(int start, int end) {
+    public ForkJoinCountTask(int start, int end) {
         this.start = start;
         this.end = end;
     }
@@ -34,8 +34,8 @@ public class CountTask extends RecursiveTask<Integer> {
         } else {
             // fork
             int middle = (start + end) / 2;
-            CountTask leftTask = new CountTask(start, middle);
-            CountTask rightTask = new CountTask(middle + 1, end);
+            ForkJoinCountTask leftTask = new ForkJoinCountTask(start, middle);
+            ForkJoinCountTask rightTask = new ForkJoinCountTask(middle + 1, end);
 
             // 执行子任务
             leftTask.fork();
@@ -56,7 +56,7 @@ public class CountTask extends RecursiveTask<Integer> {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         ForkJoinPool forkJoinPool = new ForkJoinPool();
-        CountTask countTask = new CountTask(1, 4);
+        ForkJoinCountTask countTask = new ForkJoinCountTask(1, 4);
 
         ForkJoinTask<Integer> result = forkJoinPool.submit(countTask);
 

@@ -8,7 +8,7 @@ import java.nio.file.Paths;
  * @author zhangming
  * @date 2018/12/22 17:02
  * <p>
- * 执行外部命令
+ * 执行外部命令  例如 bash
  */
 public class UseProcessBuilder {
 
