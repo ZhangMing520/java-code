@@ -46,7 +46,7 @@ Channel main methods（在多线程环境下，所有的方法都是安全的）
 | remoteAddress()	| 返回已绑定的远程SocketAddress  |
 | write() | 写数据到远程客户端，数据通过ChannelPipeline传输过去 |
 | flush()  | 刷新先前的数据 |
-|  writeAndFlush(...)	| 一个方便的方法用户调用write(...)而后调用 flush() |
+| writeAndFlush(...)	| 一个方便的方法用户调用write(...)而后调用 flush() |
 
  Provided transports
 
