@@ -63,6 +63,18 @@ b.writeByte('5');
 - PongWebSocketFrame
 - TextWebSocketFrame
 
+4. Netty 超时机制以及心跳程序实现
+> Netty 的超时类型 IdleState 主要分为
+- ALL_IDLE：一段时间内没有数据接收和发送
+- READER_IDLE：一段时间内没有数据接收
+- WRITER_IDLE：一段时间内没有数据发送
+
+> 在 Netty 的 timeout 包下，主要类有:
+- IdleStateEvent ：超时的事件
+- IdleStateHandler  ： 超时状态处理
+- ReadTimeoutHandler ：读超时状态处理
+- WriteTimeoutHandler ：写超时状态处理
+
 
 
 [Netty 4.x User Guide电子书地址](https://waylau.com/netty-4-user-guide/)
