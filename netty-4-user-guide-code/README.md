@@ -44,6 +44,26 @@ b.writeByte('5');
 - 需要上传大文件并且没有内存压力的文件服务（如，上传1GB文件的请求）
 - 支持大规模混合客户端应用用于连接以万计的第三方异步 web 服务
 
+3. websocket 
+> websocket通过“Upgrade handshake(升级握手)”从标准的http或者https协议转为websocket。因此，使用 WebSocket 的应用程序将始终以 HTTP/S 开始。在什么时候发生取决于具体应用；
+>它可以是在启动时候，或者当一个特定的URL被请求时候
+
+- 客户端/用户连接到服务器并加入聊天
+- http 请求页面或者websocket 升级握手
+- 服务处理客户端/用户请求
+- 响应URI"/"的请求，转到默认 html 页面
+- 如果访问的是URI"/ws"，处理websocket升级握手
+- 升级握手完成后，通过websocket聊天
+
+> websocket 在“帧”里面来发送数据，其中每一个都代表了一个消息的一部分。一个完整的消息可以利用了多个帧。
+>websocket"Request for Comments"(RPC)定义了6中不同的frame；Netty 给他们每个都提供了一个 POJO 实现。
+> 只需要显示处理 TextWebSocketFrame，其他的会由 WebSocketServerProtocolHandler 自动处理
+- CloseWebSocketFrame
+- PingWebSocketFrame
+- PongWebSocketFrame
+- TextWebSocketFrame
+
+
 
 [Netty 4.x User Guide电子书地址](https://waylau.com/netty-4-user-guide/)
 
