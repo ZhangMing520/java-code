@@ -37,7 +37,9 @@ public class TimeClient {
                     .option(ChannelOption.SO_KEEPALIVE, true)
                     .handler(new ChannelInitializer<SocketChannel>() {
                         protected void initChannel(SocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(new TimeClientHandler());
+//                            ch.pipeline().addLast(new TimeClientHandler());
+//                            ch.pipeline().addLast(new TimeClientHandler2());
+                            ch.pipeline().addLast(new TimeDecoder(), new TimeClientHandler());
                         }
                     });
 

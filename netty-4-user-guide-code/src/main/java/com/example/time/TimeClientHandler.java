@@ -11,6 +11,10 @@ import java.util.Date;
 /**
  * @author zhangming
  * @date 2020/7/5 16:06
+ * <p>
+ * TODO 处理器有时候会因为抛出 IndexOutOfBoundsException 而拒绝工作
+ * {@link TimeClientHandler2} 解决方案1
+ * {@link TimeDecoder} 解决方案2
  */
 public class TimeClientHandler extends ChannelInboundHandlerAdapter {
 
