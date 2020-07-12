@@ -1,0 +1,40 @@
+<state>
+  <timestamp value='1594567613540' />
+  <sourceSet name='default'>
+    <source name='C:\workspace\idea\some-java-code\ice-demos\OnBook\slice\service.ice'>
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\_OnlineBookOperations.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\_OnlineBookOperationsNC.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\_Marker.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\Message.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\OnlineBook.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\MessageHolder.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\OnlineBookHolder.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\OnlineBookPrxHolder.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\OnlineBookPrxHelper.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\OnlineBookPrx.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\_OnlineBookDel.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\_OnlineBookDelM.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\_OnlineBookDelD.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\_OnlineBookDisp.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\book\Callback_OnlineBook_bookTick.java' />
+    </source>
+    <source name='C:\workspace\idea\some-java-code\ice-demos\OnBook\slice\SMSService.ice'>
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\message\_SMSServiceOperations.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\message\_SMSServiceOperationsNC.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\message\_Marker.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\message\SMSService.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\message\SMSServiceHolder.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\message\SMSServicePrxHolder.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\message\SMSServicePrxHelper.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\message\SMSServicePrx.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\message\_SMSServiceDel.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\message\_SMSServiceDelM.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\message\_SMSServiceDelD.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\message\_SMSServiceDisp.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\OnBook\Server\src\main\java\com\hp\tel\ice\message\Callback_SMSService_sendSMS.java' />
+    </source>
+    <arg value='C:\Program Files (x86)\ZeroC\Ice-3.5.1\bin\slice2java.exe' />
+    <arg value='-IC:\Program Files (x86)\ZeroC\Ice-3.5.1\slice' />
+    <arg value='-D__SLICE2JAVA_COMPAT__' />
+  </sourceSet>
+</state>
