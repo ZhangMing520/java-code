@@ -20,7 +20,7 @@ subprojects {
         iceHome = "C:\\Program Files (x86)\\ZeroC\\Ice-3.5.1"
         java {
 //            srcDir = file("../slice/service.ice")
-            output = file("src/main/java")
+           // output = file("src/main/java")
             files = [file("../slice/service.ice"), file("../slice/SMSService.ice")]
         }
     }
