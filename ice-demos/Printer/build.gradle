@@ -23,7 +23,7 @@ subprojects {
         iceHome = "C:\\Program Files (x86)\\ZeroC\\Ice-3.5.1"
         java {
             srcDir = file("../slice/Printer.ice")
-            output = file("src/main/java")
+//            output = file("src/main/java")
         }
     }
 
