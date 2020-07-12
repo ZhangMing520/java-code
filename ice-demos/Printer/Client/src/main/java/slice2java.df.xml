@@ -1,0 +1,23 @@
+<state>
+  <timestamp value='1594540574370' />
+  <sourceSet name='default'>
+    <source name='C:\workspace\idea\some-java-code\ice-demos\Printer\slice\Printer.ice'>
+      <file name='C:\workspace\idea\some-java-code\ice-demos\Printer\Client\src\main\java\com\generate\demo\_MyServiceOperations.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\Printer\Client\src\main\java\com\generate\demo\_MyServiceOperationsNC.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\Printer\Client\src\main\java\com\generate\demo\_Marker.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\Printer\Client\src\main\java\com\generate\demo\MyService.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\Printer\Client\src\main\java\com\generate\demo\MyServiceHolder.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\Printer\Client\src\main\java\com\generate\demo\MyServicePrxHolder.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\Printer\Client\src\main\java\com\generate\demo\MyServicePrxHelper.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\Printer\Client\src\main\java\com\generate\demo\MyServicePrx.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\Printer\Client\src\main\java\com\generate\demo\_MyServiceDel.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\Printer\Client\src\main\java\com\generate\demo\_MyServiceDelM.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\Printer\Client\src\main\java\com\generate\demo\_MyServiceDelD.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\Printer\Client\src\main\java\com\generate\demo\_MyServiceDisp.java' />
+      <file name='C:\workspace\idea\some-java-code\ice-demos\Printer\Client\src\main\java\com\generate\demo\Callback_MyService_hellow.java' />
+    </source>
+    <arg value='C:\Program Files (x86)\ZeroC\Ice-3.5.1\bin\slice2java.exe' />
+    <arg value='-IC:\Program Files (x86)\ZeroC\Ice-3.5.1\slice' />
+    <arg value='-D__SLICE2JAVA_COMPAT__' />
+  </sourceSet>
+</state>
