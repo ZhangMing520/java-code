@@ -67,3 +67,38 @@ struct Location{
 }
 
 ```
+
+4. Ice Object
+
+   > 一个Ice Object可以有一个主要接口及多个其他接口（其他接口被称之为facet），与java对象可以继承多个接口的做法一致
+
+   > Java在需要返回多个结果时会用到一种技术，即传入一个Map对象或者Java Bean作为参数，而在方法里面修改Map或者JavaBean属性，就是Out Parameter 模式。Slice也支持这种做法，参数增加 out 修饰符，即变为出参
+
+   ```java
+   void changeSleepPeriod(TimeOfDay startTime,TimeOfDay stopTime, out TimeOfDay prevStartTime,out TimeOfDay prevStopTime)
+   ```
+
+   
+
+5. Idempotent 关键字
+
+   > 在Slice接口方法上增加 Idempotent 关键字，表示该方法是幂等的，即调用1次和调用2次其结果都是一样的。比如常见的查询操作基本上都是幂等的，而update和create等方法则不是，若一个方式是幂等的，则增加idempotent修饰后，可以让ice更好的实现“自动恢复错误”机制，即在某个 ice object 调用失败的情况下，无法区分是否已经调用过，但在因为网络错误导致没有正确返回结果的情况下，ice会再次调用idempotent修饰的方法，透明恢复故障
+
+6. 多个模块的接口引用共同的数据对象
+
+   ```c
+   #include common.slice
+   ```
+
+7. slice 文件
+
+   ```C
+   // demo 表示模块名 和 Java package对应
+   // 生成的java代码package对应 com.my.demo,则在Slice文件中增加以下注解
+   [["java:package:com.my.demo"]]
+   module demo{
+       
+   }
+   ```
+
+   

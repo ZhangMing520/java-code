@@ -11,25 +11,39 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'com.zeroc.gradle.ice-builder.slice'
 
+    // 中文乱码
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
     sourceCompatibility = 1.8
 
     // Both Client and Server projects share the Printer.ice slice definitions
     slice {
+        iceHome = "C:\\Program Files (x86)\\ZeroC\\Ice-3.5.1"
         java {
-            files = [file("../Printer.ice")]
+            srcDir = file("../slice/Printer.ice")
+            output = file("src/main/java")
         }
     }
 
     // Use Ice JAR files from maven central repository
     repositories {
+        // 下载之后用本地
         mavenLocal()
-        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven {
+            url 'https://repo.zeroc.com/nexus/content/repositories/releases'
+        }
+        maven {
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
+        }
         mavenCentral()
     }
 
     // Both Client and Server depend only on Ice JAR
     dependencies {
-        implementation 'com.zeroc:ice:3.7.2'
+//        implementation 'com.zeroc:ice:3.7.2'
+        implementation 'com.zeroc:ice:3.5.1'
     }
 
     // Create a JAR file with the appropriate Main-Class and Class-Path attributes
