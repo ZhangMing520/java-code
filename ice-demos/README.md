@@ -108,6 +108,16 @@ struct Location{
 
 - void stop();服务停止方法，在stop方法中回收所有被service使用的资源，一般在stop中service会是一个object adapter对象无效（deactivates），不过也有可能对object adapter执行一个waitForDeactivate方法来确保所有未完成的请求在资源清理前得到处理，默认会将它的object adapter作为销毁 communicator 的一部分连同 communicator对象一起 destroy 掉，但在某些情况下不能做到，如IceBox中services使用共享的communicator对象时，你需要明确指明销毁它的 object adapter 对象
 
+  ```bash
+  # 启动 icebox 
+  
+  java -cp 'C:\Program Files (x86)\ZeroC\Ice-3.5.1\lib' IceBox.Server --Ice.Config=config.properties
+  ```
+
+  
+
+   
+
 9. Ice为每个服务都创建了独立的线程池
 
    > 每个不同的服务是由不同的线程池的，相互隔离，防止一个不良设计和实现的服务影响到其他服务，从而导致系统稳定性降低（Zeroc Ice 权威指南）
@@ -119,4 +129,17 @@ struct Location{
     > 服务注册表Registry组件，它是一个以二进制文件形式存储运行期Ice服务注册信息的独立进程，支持主从同步，从节点可以分担查询请求，类似MySQL读写分离的功能，并防止单点故障，同时依托Registry的功能，ZeroC设计实现了Service Locator服务组件，它是一个标准的Ice Objec服务对象，可以在Ice程序中调用这个服务，从而解决服务地址的查询问题。另外，Service Locator服务组件和Ice 客户端 Runtime 框架相互结合，实现了自动化的透明的服务调用负载均衡功能
 
 - 自动实现多种可选择的负载均衡算法，客户端无需自己实现
+
 - 服务的部署位置和部署数量发生变化后，客户端无需重启、自动感知和适应
+
+  ```bash
+  # 启动IceGrid的Registry进程，采用Ice安装后提供的命令icegridregistry（在Ice安装目录的Ice-3.5.1\bin子目录下）
+  
+  icegridregistry --Ice.Config=registry.cfg
+  ```
+
+  
+
+
+
+
