@@ -96,9 +96,27 @@ struct Location{
    // demo 表示模块名 和 Java package对应
    // 生成的java代码package对应 com.my.demo,则在Slice文件中增加以下注解
    [["java:package:com.my.demo"]]
-   module demo{
-       
+   module demo{  
    }
    ```
 
-   
+   8. IceBox
+
+      > IceBox 就好像一个Tomcat，我们只要写N个Ice服务的代码，用一个装配文件定义需要加载的服务列表、服务的启动参数、启动次序等必要信息，然后启动IceBox，我们党的应用系统就能够正常运行了。IceBox 内部会创建一个service manager对象（Ice.Admin）,这个对象专门负责loading和initializing那些配置好的服务，你可以有选择性地将这个对象暴露给远程的客户端，这样IceBox就可以执行某些远程管理任务
+
+- void start(String name , Communicator communicator , String[] args); 服务启动方法，服务可以在start操作中初始化自身；这通常包括创建对象适配器和servant。name和args参数提供了来自服务的配置信息，communicator 参数是服务管理器为供服务使用而创建的Ice.Communicator 对象。取决于服务的配置，这个通信器实例会由同一个IceBox服务器中的其他服务共享，因此，你需要注意确保向对象适配器（ObjectAdapter）这样的对象的名字是唯一的
+
+- void stop();服务停止方法，在stop方法中回收所有被service使用的资源，一般在stop中service会是一个object adapter对象无效（deactivates），不过也有可能对object adapter执行一个waitForDeactivate方法来确保所有未完成的请求在资源清理前得到处理，默认会将它的object adapter作为销毁 communicator 的一部分连同 communicator对象一起 destroy 掉，但在某些情况下不能做到，如IceBox中services使用共享的communicator对象时，你需要明确指明销毁它的 object adapter 对象
+
+9. Ice为每个服务都创建了独立的线程池
+
+   > 每个不同的服务是由不同的线程池的，相互隔离，防止一个不良设计和实现的服务影响到其他服务，从而导致系统稳定性降低（Zeroc Ice 权威指南）
+
+> 与书上内容有出入，实践是相同线程，线程id也是一样的；可能后面优化修改了
+
+10. Ice Registry
+
+    > 服务注册表Registry组件，它是一个以二进制文件形式存储运行期Ice服务注册信息的独立进程，支持主从同步，从节点可以分担查询请求，类似MySQL读写分离的功能，并防止单点故障，同时依托Registry的功能，ZeroC设计实现了Service Locator服务组件，它是一个标准的Ice Objec服务对象，可以在Ice程序中调用这个服务，从而解决服务地址的查询问题。另外，Service Locator服务组件和Ice 客户端 Runtime 框架相互结合，实现了自动化的透明的服务调用负载均衡功能
+
+- 自动实现多种可选择的负载均衡算法，客户端无需自己实现
+- 服务的部署位置和部署数量发生变化后，客户端无需重启、自动感知和适应
