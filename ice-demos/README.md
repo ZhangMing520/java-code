@@ -114,9 +114,6 @@ struct Location{
   java -cp 'C:\Program Files (x86)\ZeroC\Ice-3.5.1\lib' IceBox.Server --Ice.Config=config.properties
   ```
 
-  
-
-   
 
 9. Ice为每个服务都创建了独立的线程池
 
@@ -138,8 +135,12 @@ struct Location{
   icegridregistry --Ice.Config=registry.cfg
   ```
 
+  11. IceGrid Node
   
+      > 分布在各个主机上的节点进程并不是完全独立的，而是批次之间有相互联系和通信的，集群对集群中的节点有一些控制指令，如部署、启停或者调整某些参数等。IceGrid Node 就好像一个容器，启动之后，会安装预先定义的配置文件，加载其中的IceBox，并根据要求启动或停止其中的一个或者多个IceBox进程，同时定期采集底层主机的负载信息（cpu load），这些信息用于基于主机负载的负载均衡算法调度，它同时把自己的控制端口注册到Registry中，IceGrid Admin控制器可以对所有的IceGrid Node 几种进行远程管理，下达指令
 
-
+- 负责IceBox的装载和启停
+- 采集主机的负载信息
+- 执行控制器IceGrid Admin的命令
 
 
