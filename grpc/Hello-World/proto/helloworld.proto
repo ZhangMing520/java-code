@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+// 指定包名
+option java_package = "com.example.helloworld.generate";
+// hello.proto 生成的代码分开存放，HelloRequest存放在HelloRequest.java
+// 否则生成一个 Hello.java 文件
+option java_multiple_files = true;
+option java_outer_classname = "HelloWorldProto" ;
+// 设置Objective-C类的前缀，添加到所有Objective-C
+option objc_class_prefix = "HLW";
+
+package generate;
+
+// the greeting service definition
+service Greeter{
+  // sends a message
+  rpc SayHello(HelloRequest) returns(HelloReply){}
+  
+}
+
+// the request message containing the user's name
+message HelloRequest{
+  string name = 1 ;
+}
+
+// the response message containing the greetings
+message HelloReply{
+  string message = 1;
+}
