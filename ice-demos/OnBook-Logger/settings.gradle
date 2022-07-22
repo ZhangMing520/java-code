@@ -1,0 +1,5 @@
+rootProject.name = 'OnBook-Logger'
+
+include "Server"
+include "Client"
+

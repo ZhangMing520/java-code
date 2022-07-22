@@ -1,0 +1,4 @@
+rootProject.name = 'Printer-Async'
+
+include "Server"
+include "Client"

@@ -1,0 +1,8 @@
+rootProject.name = 'Printer'
+
+include 'Client'
+include 'Server'
+
+
+
+

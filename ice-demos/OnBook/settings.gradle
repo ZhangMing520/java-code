@@ -1,0 +1,5 @@
+rootProject.name = 'OnBook'
+
+include "Server"
+include "Client"
+

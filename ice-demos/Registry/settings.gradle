@@ -1,0 +1,4 @@
+rootProject.name = 'Registry'
+
+include "Server"
+include "Client"
