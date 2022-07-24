@@ -3,14 +3,28 @@
  * @author your name (you@domain.com)
  * @brief
  *
+ * Welcome.java 需要编译 Welcome.class
+ *
  * export LD_LIBRARY_PATH=$JAVA_HOME/jre/lib/amd64/server:$LD_LIBRARY_PATH
  *
  * gcc -I $JAVA_HOME/include -I $JAVA_HOME/include/linux -L$JAVA_HOME/jre/lib/amd64/server InvocationTest.c -ljvm  -o InvocationTest
  *
  * $JAVA_HOME/jre/lib/amd64/server 此路径也可能是 $JAVA_HOME/jre/lib/i386/client，找到 libjvm.so 即可
- *  
- * cl -D_WINDOWS -I $JAVA_HOME\include -I $JAVA_HOME\include\win32 InvocationTest.c $JAVA_HOME\lib\jvm.lib advapi32.lib
- * 
+ *
+ * Windows
+   $env:inc_vc="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include"
+   $env:inc_sdk_sh="C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared"
+   $env:inc_sdk_um="C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um"
+   $env:inc_sdk_ucrt="C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt"
+   $env:inc_sdk_winrt="C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\winrt"
+   $env:inc_vc_lib="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\lib\x64\*.lib"
+   $env:inc_sdk_um_lib="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\um\x64\*.Lib"
+   $env:inc_sdk_ucrt_lib="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\ucrt\x64\*.lib"
+
+   cl -D_WINDOWS -I $env:JAVA_HOME\include -I $env:JAVA_HOME\include\win32 -I "$env:inc_vc"  -I "$env:inc_sdk_ucrt" -I "$env:inc_sdk_sh" -I "$env:inc_sdk_winrt" -I "$env:inc_sdk_um"  InvocationTest.c  "$env:JAVA_HOME\lib\jvm.lib" "$env:inc_sdk_um_lib" "$env:inc_vc_lib" "$env:inc_sdk_ucrt_lib"
+
+ *
+ *
  * Cygwin
  * g++ -D_WINDOWS -mno-cygwin -I $JAVA_HOME\include -I $JAVA_HOME\include\win32 -D__int64="long long" -I c:\cygwin\usr\include\w32api InvocationTest.c -o InvocationTest
  *
@@ -101,8 +115,8 @@ static void GetPublicJREHome(char *buf, jint bufsize)
     char version[MAX_PATH];
 
     // find the current version of the JRE
-    char *JRE_KEY = "Software\\JavaSoft\\Java Runtime Environment";
-    if (RegOpenKeyEx(HKEY_LOCAL_MACHINE, JRE_KEY, 0, KEY_READ, &key) != 0)
+    char *JRE_KEY = "SOFTWARE\\JavaSoft\\Java Runtime Environment";
+    if (RegOpenKeyEx(HKEY_LOCAL_MACHINE, JRE_KEY, 0, KEY_READ | KEY_WOW64_64KEY, &key) != 0)
     {
         fprintf(stderr, "Error opening registry key '%s'\n", JRE_KEY);
         exit(1);
@@ -115,7 +129,7 @@ static void GetPublicJREHome(char *buf, jint bufsize)
         exit(1);
     }
 
-    if (RegOpenKeyEx(key, version, 0, KEY_READ, &subkey) != 0)
+    if (RegOpenKeyEx(key, version, 0, KEY_READ | KEY_WOW64_64KEY, &subkey) != 0)
     {
         fprintf(stderr, "Error opening registry key '%s\\%s'\n", JRE_KEY, version);
         RegCloseKey(key);
@@ -133,7 +147,7 @@ static void GetPublicJREHome(char *buf, jint bufsize)
     RegCloseKey(subkey);
 }
 
-static HINSTANCE loadVMLibrary(void)
+static HINSTANCE loadJVMLibrary(void)
 {
     HINSTANCE h1, h2;
     char msvcdll[MAX_PATH];
@@ -142,20 +156,23 @@ static HINSTANCE loadVMLibrary(void)
     strcpy(javadll, msvcdll);
     strncat(msvcdll, "\\bin\\msvcr71.dll", MAX_PATH - strlen(msvcdll));
     msvcdll[MAX_PATH - 1] = '\0';
-    strncat(javadll, "\\bin\\client\\jvm.dll", MAX_PATH - strlen(javadll));
+    // 应用程序是64位的，jvm.dll也是64位的
+    strncat(javadll, "\\bin\\server\\jvm.dll", MAX_PATH - strlen(javadll));
     javadll[MAX_PATH - 1] = '\0';
 
     h1 = LoadLibrary(msvcdll);
-    if (h1 == NULL)
-    {
-        fprintf(stderr, "Can't load library msvcr71.dll\n");
-        exit(1)
-    }
+    // 此处未加载
+    printf("%s\n", msvcdll);
+    // if (h1 == NULL)
+    // {
+    //     fprintf(stderr, "Can't load library msvcr71.dll\n");
+    //     exit(1);
+    // }
     h2 = LoadLibrary(javadll);
     if (h2 == NULL)
     {
         fprintf(stderr, "Can't load library jvm.dll\n");
-        exit(1)
+        exit(1);
     }
     return h2;
 }

@@ -14,3 +14,6 @@ target
 .idea
 .vscode
 .gradle
+
+*.exe
+*.obj
