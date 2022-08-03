@@ -1,6 +1,8 @@
+package helloNative;
+
 /**
  * @author zhangming
- * @date 2022-07-19 00:04:34
+ * @version  2022-07-19 00:04:34
  * <p>
  * gcc -fPIC -I $JAVA_HOME/include -I $JAVA_HOME/include/linux -shared -o libEmployee.so Employee.c
  * javac EmployeeTest.java

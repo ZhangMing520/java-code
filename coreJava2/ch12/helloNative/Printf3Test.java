@@ -1,3 +1,4 @@
+package helloNative;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -5,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * @author zhangming
- * @date 2022-07-19 22:12:10
+ * @version 2022-07-19 22:12:10
  * <p>
  * gcc -fPIC -I $JAVA_HOME/include -I $JAVA_HOME/include/linux -shared -o libPrintf3.so Printf3.c
  * javac Printf3Test.java

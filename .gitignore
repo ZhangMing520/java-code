@@ -9,11 +9,12 @@ Thumbs.db
 ._.DS_Store
 logs
 target
-*.iml
 .idea
 .vscode
 .gradle
+out
 
+*.iml
 *.exe
 *.obj
 *.exp

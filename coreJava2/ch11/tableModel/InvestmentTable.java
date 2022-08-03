@@ -6,8 +6,8 @@ import java.awt.*;
 
 /**
  * @author zhangming
- * @date 7/19/22 11:11 PM
- *
+ * @version 7/19/22 11:11 PM
+ * <p>
  * 表格模型。如果你发现自己在将数据装入一个数组中，然后作为一个表格显示出来，那么就应该考虑实现自己的表格模型了。
  */
 public class InvestmentTable {
@@ -76,5 +76,5 @@ class InvestmentTableModel extends AbstractTableModel {
     public String getColumnName(int column) {
         return (column + minRate) + "%";
     }
-    
+
 }

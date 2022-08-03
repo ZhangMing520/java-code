@@ -1,6 +1,7 @@
+package helloNative;
 /**
  * @author zhangming
- * @date 2022-07-18 21:43:34
+ * @version 2022-07-18 21:43:34
  */
 class Printf1Test {
 

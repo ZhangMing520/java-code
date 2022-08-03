@@ -1,12 +1,14 @@
+package win32reg;
+
 import java.util.Enumeration;
 
 /**
  * @author zhangming
- * @date 7/22/22 9:52 PM
+ * @version 7/22/22 9:52 PM
  * <p>
- *  cl -I $env:JAVA_HOME\include -I $env:JAVA_HOME\include\win32 -LD Win32RegKey.c
- * 
- *  javac -encoding utf8 -h . .\Win32RegKey.java
+ * cl -I $env:JAVA_HOME\include -I $env:JAVA_HOME\include\win32 -LD Win32RegKey.c
+ * <p>
+ * javac -encoding utf8 -h . .\Win32RegKey.java
  */
 public class Win32RegKey {
 
@@ -40,8 +42,8 @@ public class Win32RegKey {
      * 7. 如果不是以上类型或调用 API 函数时出现错误，那就抛出异常，并小心地释放到此为止所获得的所有资源
      * 8. 关闭键，并返回创建的对象（String Integer byte[]）
      *
-     * @param name
-     * @return
+     * @param name  注册表名称
+     * @return      注册表值
      */
     public native Object getValue(String name);
 

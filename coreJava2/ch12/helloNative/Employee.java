@@ -1,6 +1,7 @@
+package helloNative;
 /**
  * @author zhangming
- * @date 2022-07-19 00:04:34
+ * @version 2022-07-19 00:04:34
  * 在对象上进行操作的本地方法。怎么从本地方法访问对象域。
  */
 class Employee {
