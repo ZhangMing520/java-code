@@ -1,6 +1,8 @@
+package helloNative;
+
 /**
  * @author zhangming
- * @date 2022-07-18 22:14:06
+ * @version 2022-07-18 22:14:06
  * <p>
  * gcc -fPIC -I $JAVA_HOME/include -I $JAVA_HOME/include/linux -shared -o libPrintf2.so Printf2.c
  * javac Printf2Test.java

@@ -1,8 +1,10 @@
+package helloNative;
+
 import java.io.PrintWriter;
 
 /**
  * @author zhangming
- * @date 7/21/22 12:00 AM
+ * @version 7/21/22 12:00 AM
  * gcc -fPIC -I $JAVA_HOME/include -I $JAVA_HOME/include/linux -shared -o libPrintf4.so Printf4.c
  * javac Printf4Test.java
  * java -Djava.library.path=. Printf4Test

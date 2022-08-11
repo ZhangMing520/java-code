@@ -1,6 +1,8 @@
+package helloNative;
+
 /**
  * @author zhangming
- * @date 2022-07-17 22:02:14
+ * @version 2022-07-17 22:02:14
  * 关键词 native 表示本地方法。本地方法既可以是静态的也可以是非静态的
  * <p>
  * C 函数命名规则：

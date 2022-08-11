@@ -1,10 +1,3 @@
-/**
- * @Author: zhangming 1749909438@qq.com
- * @Date: 2022-07-19 22:47:09
- * @LastEditors: zhangming 1749909438@qq.com
- * @LastEditTime: 2022-07-19 22:50:28
- * @Description:    展示一个简单的表格
- */
 package table;
 
 import java.awt.*;
@@ -12,11 +5,18 @@ import java.awt.print.*;
 
 import javax.swing.*;
 
+/**
+ * @author zhangming
+ * @version 2022-07-19 22:47:09
+ * <p>
+ * 展示一个简单的表格
+ */
 public class TableTest {
 
     public static void main(String[] args) {
-        EventQueue.invokeLater(()->{
-            PlanetTableFrame frame=new PlanetTableFrame();
+        System.out.println(System.getProperty("java.endorsed.dirs"));
+        EventQueue.invokeLater(() -> {
+            PlanetTableFrame frame = new PlanetTableFrame();
             frame.setTitle("TableTest");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);

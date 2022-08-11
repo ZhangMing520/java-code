@@ -1,6 +1,8 @@
+package helloNative;
+
 /**
  * @author zhangming
- * @date 2022-07-17 22:42:51
+ * @version 2022-07-17 22:42:51
  * <p>
  * 把当前目录添加到库路径中
  * <p>

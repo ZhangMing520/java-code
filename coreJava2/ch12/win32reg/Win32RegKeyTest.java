@@ -1,8 +1,10 @@
+package win32reg;
+
 import java.util.Enumeration;
 
 /**
  * @author zhangming
- * @date 2022/7/24 13:48
+ * @version 2022/7/24 13:48
  * <p>
  * 因为写注册表需要管理员权限，所以以下命令在管理员 powershell 窗口执行
  * <p>

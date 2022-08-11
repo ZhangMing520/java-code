@@ -1,6 +1,7 @@
+package helloNative;
 /**
  * @author zhangming
- * @date 2022-07-18 22:15:39
+ * @version 2022-07-18 22:15:39
  */
 class Printf2 {
 
@@ -8,6 +9,5 @@ class Printf2 {
 
     static {
         System.loadLibrary("Printf2");
-        ;
     }
 }
