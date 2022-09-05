@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class InstallSoftware {
+void installWizard(Wizard wizard)
+}
+class Wizard {
+int first()
+int second()
+int third()
+void InstallWizard()
+}
+
+InstallSoftware ..> Wizard
+
+@enduml

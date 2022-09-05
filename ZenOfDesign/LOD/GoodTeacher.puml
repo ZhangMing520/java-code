@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/zh/class-diagram
+
+class Teacher {
+void command(GroupLeader groupLeader)
+}
+class GroupLeader {
+GroupLeader(List<Girl> girls)
+void countGirls(List<Girl> girls)
+}
+class Girl
+
+Teacher ..> GroupLeader
+GroupLeader o..> Girl
+
+@enduml
