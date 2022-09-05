@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class AbstractSearcher {
+AbstractSearcher(IGreatTemperamentGirl girl)
+AbstractSearcher(IGoodBodyGirl girl)
+abstract void show()
+}
+interface IGoodBodyGirl {
+void goodLooking()
+void niceFigure()
+
+}
+interface IGreatTemperamentGirl {
+void greatTemperament()
+}
+
+class PrettyGirl
+class Searcher
+
+AbstractSearcher ..> IGoodBodyGirl
+AbstractSearcher ..> IGreatTemperamentGirl
+AbstractSearcher <|-- Searcher
+IGreatTemperamentGirl <|-- PrettyGirl
+IGoodBodyGirl <|-- PrettyGirl
+
+@enduml
