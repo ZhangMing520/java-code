@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class BookStore
+interface IBook {
+String getName()
+int getPrice()
+String getAuthor()
+}
+class NovelBook {
+NovelBook(String name, int price, String author)
+}
+
+IBook <-- BookStore
+IBook <|.. NovelBook
+
+
+@enduml

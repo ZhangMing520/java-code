@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class BookStore
+interface IBook {
+String getName()
+int getPrice()
+String getAuthor()
+}
+class NovelBook {
+NovelBook(String name, int price, String author)
+}
+' 扩展内容
+class OffNovelBook {
+int getPrice()
+}
+note "覆写getPrice()" as N1
+
+
+OffNovelBook .. N1
+IBook <-- BookStore
+IBook <|.. NovelBook
+NovelBook <|.. OffNovelBook
+
+@enduml
