@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IDriver{
+void drive(ICar car)
+}
+interface ICar{
+void run()
+}
+IDriver ..> ICar
+
+class Driver
+class Benz
+class BMW
+
+IDriver <|-- Driver
+ICar <|-- Benz
+ICar <|-- BMW
+
+@enduml
